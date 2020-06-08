@@ -85,6 +85,7 @@
   <script src={{ asset('libs/imagesloaded/imagesloaded.pkgd.min.js')}}> </script>
   <script src={{ asset('libs/%40fancyapps/fancybox/dist/jquery.fancybox.min.js')}}> </script>
   <script src={{ asset('js/quick-website.js')}}> </script>
+  <script src={{ asset('js/script.js')}}> </script>
   <script src="{{asset('libs/apexcharts/dist/apexcharts.min.js')}}"></script>
   <script>
     feather.replace({

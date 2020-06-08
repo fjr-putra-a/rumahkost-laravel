@@ -23,7 +23,7 @@
 
         @include('components.header-sysadmin')
 
-        <ul class="navbar-nav align-items-lg-center d-none d-lg-flex ml-lg-auto mr-4">
+        <ul class="navbar-nav align-items-lg-center d-none d-lg-flex ml-lg-auto mr-3">
           <li class=nav-item>
             <a href="#" data-action="" data-target="" class="nav-link nav-link-icon px-2" data-placement="bottom"
               title="Cari">
@@ -51,7 +51,7 @@
           <li class="nav-item dropdown dropdown-animate">
             <a class="nav-link nav-link-icon px-2" href="#" role=button data-toggle=dropdown aria-haspopup=true
               aria-expanded=false>
-              <span class="avatar-content text-body font-weight-900 mr-5">{{ Auth::user()->name }}</span>
+              <span class="avatar-content text-dark font-weight-900 mr-5">{{ Auth::user()->name }}</span>
             </a>
             <div class="dropdown-menu dropdown-menu-sm dropdown-menu-left dropdown-menu-arrow p-3">
               <h6 class="dropdown-header px-0 mb-2 text-success">Hi, {{ Auth::user()->name }}</h6>
@@ -67,7 +67,7 @@
               </a>
             </div>
           </li>
-          <span class="avatar rounded-circle border">
+          <span class="avatar rounded-circle avatar-sm border">
             <img alt="Image placeholder" src="{{asset('img/profile')}}/{{ Auth::user()->foto }}">
           </span>
         </a>
