@@ -8,15 +8,15 @@
         <div class="row align-items-center justify-content-center min-vh-100">
             <div class="col-md-6 col-lg-5 col-xl-4 py-6 py-md-0 mb-5">
                 <div>
-                    <div class="mb-4 text-center">
-                        <h6 class="h1 mb-1">Login</h6>
-                        <p class="text-muted mb-0">Masuk ke akun Anda untuk melanjutkan.</p>
-                    </div><span class="clearfix"></span>
+                    <div class="mb-3 text-center">
+                        <h6 class="h1 mb-1">Admin</h6>
+                        <p class="text-muted mb-0">Masukkan email dan password untuk melanjutkan.</p>
+                    </div>
+                    <span class="clearfix"></span>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
-                        <div class="form-group">
-                            <label class="form-control-label">Email</label>
+                        <div class="form-group"><label class="form-control-label">Email</label>
                             <div class="input-group">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
                                     name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -33,7 +33,7 @@
                             <div class="d-flex align-items-center justify-content-between">
                                 <div><label class="form-control-label">Password</label></div>
                             </div>
-                            <div class="input-group input-group-merge">
+                            <div class="input-group">
                                 <input id="password" type="password"
                                     class="form-control @error('password') is-invalid @enderror" name="password"
                                     required autocomplete="current-password">
@@ -46,7 +46,7 @@
                             </div>
                         </div>
 
-                        <div class="mt-4"><button type="submit" class="btn btn-block btn-primary">Masuk</button></div>
+                        <div class="mt-4"><button type="submit" class="btn btn-block btn-success">Masuk</button></div>
                     </form>
                 </div>
             </div>
