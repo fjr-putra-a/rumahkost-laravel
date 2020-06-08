@@ -20,4 +20,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['prefix' => '_sysadmin', 'middleware' => ['auth', 'verified']], function () {
+    Route::get('', 'SysAdminController@beranda')->name('admin.beranda');
+});

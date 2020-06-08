@@ -1,17 +1,14 @@
 <!DOCTYPE html>
-<html lang=en>
-<!-- Mirrored from preview.webpixels.io/quick-website-ui-kit/pages/secondary/careers.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 24 Feb 2020 12:38:03 GMT -->
-<!-- Added by HTTrack -->
-<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-<!-- /Added by HTTrack -->
+<html lang=id>
 
 <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
   <meta charset=utf-8>
   <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-  <meta name=description
-    content="Quick Website UI Kit is an innovative HTML template solution which combines beautiful design and flawless functionality.">
-  <meta name=author content=Webpixels>
+  <meta name=author content=katri.id>
+
   <title>@yield('title')</title>
+
   <style>
     @keyframes hidePreloader {
       0% {
@@ -52,6 +49,7 @@
       animation: hidePreloader .5s linear .5s forwards
     }
   </style>
+
   <script>
     window.addEventListener("load", function() {
             setTimeout(function() {
@@ -59,17 +57,22 @@
             }, 300)
         })
   </script>
+
   <link rel=icon href={{ asset('img/brand/favicon1.png') }} type=image/png> <link rel=stylesheet
     href={{ asset('libs/%40fancyapps/fancybox/dist/jquery.fancybox.min.css')}}>
   <link rel=stylesheet href={{ asset('css/quick-website.css')}} id=stylesheet>
+  <link rel=stylesheet href={{ asset('css/style.css')}} id=stylesheet>
   <link rel=stylesheet href={{ asset('libs/%40fortawesome/fontawesome-free/css/all.min.css')}}>
+  <link rel=stylesheet href={{ asset('libs/datatables/datatables.css')}}>
   @yield('style')
 </head>
 
-<body>
+<body class="bg-section-secondary">
   <div class=preloader>
     <div class="spinner-border text-primary" role=status><span class=sr-only>Loading...</span></div>
   </div>
+
+  @include('templates.header-dashboard')
 
   @yield('content')
 
@@ -82,16 +85,20 @@
   <script src={{ asset('libs/imagesloaded/imagesloaded.pkgd.min.js')}}> </script>
   <script src={{ asset('libs/%40fancyapps/fancybox/dist/jquery.fancybox.min.js')}}> </script>
   <script src={{ asset('js/quick-website.js')}}> </script>
-
+  <script src="{{asset('libs/apexcharts/dist/apexcharts.min.js')}}"></script>
   <script>
     feather.replace({
               width: "1em",
               height: "1em"
           })
   </script>
-
+  <script src={{ asset('libs/datatables/datatables.js')}}> </script>
+  <script>
+    $(document).ready(function() {
+        $("#datatables").DataTable();
+      })
+  </script>
   @yield('script')
 </body>
-<!-- Mirrored from preview.webpixels.io/quick-website-ui-kit/pages/secondary/careers.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 24 Feb 2020 12:38:04 GMT -->
 
 </html>
