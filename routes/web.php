@@ -22,4 +22,11 @@ Auth::routes();
 
 Route::group(['prefix' => '_sysadmin', 'middleware' => ['auth', 'verified']], function () {
     Route::get('', 'SysAdminController@beranda')->name('admin.beranda');
+
+    Route::group(['prefix' => 'fasilitas'], function () {
+        Route::get('', 'Admin\FasilitasController@index')->name('admin.fasilitas');
+        Route::post('', 'Admin\FasilitasController@store')->name('admin.fasilitas.simpan');
+        Route::patch('{fasilitas}', 'Admin\FasilitasController@update')->name('admin.fasilitas.edit');
+        Route::delete('{fasilitas}', 'Admin\FasilitasController@destroy')->name('admin.fasilitas.hapus');
+    });
 });

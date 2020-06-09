@@ -1,12 +1,12 @@
 <ul class="navbar-nav">
-  <li class="nav-item nav-item-spaced d-lg-block ml-6">
+  <li class="nav-item nav-item-spaced d-lg-block ml-5">
     <a class="nav-link {{ Request::is('_sysadmin') ? 'active' : '' }}" href={{ route('admin.beranda') }}>Beranda</a>
   </li>
   <li class="nav-item nav-item-spaced dropdown dropdown-animate ml-1" data-toggle=hover>
     <a class="nav-link {{ Request::is('*fasilitas') || Request::is('*kamar') || Request::is('*token') ? 'active' : '' }}"
       href=# role=button data-toggle=dropdown aria-haspopup=true aria-expanded=false>Master</a>
     <div class="dropdown-menu dropdown-menu-sm">
-      <a href="" class="dropdown-item">Fasilitas</a>
+      <a href="{{ route('admin.fasilitas') }}" class="dropdown-item">Fasilitas</a>
       <a href="" class="dropdown-item">Kamar</a>
       <a href="" class="dropdown-item">Token</a>
     </div>
