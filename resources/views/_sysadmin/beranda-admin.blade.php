@@ -12,7 +12,7 @@
         <div class="card">
           <div class="card-body text-center">
             <div class="mb-3">
-              <h1 class="text-success font-weight-bold">4</h1>
+              <h1 class="text-primary font-weight-bold">4</h1>
             </div>
             <h5 class="h4 font-weight-bolder mb-1">Fasilitas</h5>
             <span class="d-block text-sm text-muted">Jumlah Fasilitas yang <br> tersedia di Kost.</span>
@@ -24,7 +24,7 @@
         <div class="card">
           <div class="card-body text-center">
             <div class="mb-3">
-              <h1 class="text-success font-weight-bold">4</h1>
+              <h1 class="text-primary font-weight-bold">4</h1>
             </div>
             <h5 class="h4 font-weight-bolder mb-1">Kamar</h5>
             <span class="d-block text-sm text-muted">Jumlah kamar yang <br> tersedia di Kost.</span>
@@ -36,7 +36,7 @@
         <div class="card">
           <div class="card-body text-center">
             <div class="mb-3">
-              <h1 class="text-success font-weight-bold">3</h1>
+              <h1 class="text-primary font-weight-bold">3</h1>
             </div>
             <h5 class="h4 font-weight-bolder mb-1">Penyewa</h5>
             <span class="d-block text-sm text-muted">Total Penyewa yang <br> ada didalam Kost.</span>
@@ -48,7 +48,7 @@
         <div class="card">
           <div class="card-body text-center">
             <div class="mb-3">
-              <h1 class="text-success font-weight-bold">3</h1>
+              <h1 class="text-primary font-weight-bold">3</h1>
             </div>
             <h5 class="h4 font-weight-bolder mb-1">Transaksi</h5>
             <span class="d-block text-sm text-muted">Total Transaksi yang <br> terjadi di Kost.</span>

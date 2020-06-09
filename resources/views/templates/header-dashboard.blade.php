@@ -54,7 +54,7 @@
               <span class="avatar-content text-dark font-weight-900 px-4">{{ Auth::user()->name }}</span>
             </a>
             <div class="dropdown-menu dropdown-menu-sm dropdown-menu-left dropdown-menu-arrow p-3">
-              <h6 class="dropdown-header px-0 mb-2 text-success">Hi, {{ Auth::user()->name }}</h6>
+              <h6 class="dropdown-header px-0 mb-2 text-primary">Hi, {{ Auth::user()->name }}</h6>
               <div class=dropdown-divider></div>
               <a href="#" class=dropdown-item>
                 <i data-feather=settings></i>

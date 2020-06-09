@@ -7,7 +7,7 @@
 
 @section('button')
 <button type="button" data-toggle="modal" data-target="#input"
-  class="btn btn-sm btn-success btn-icon-only rounded-circle">
+  class="btn btn-sm btn-primary btn-icon-only rounded-circle">
   <span class="btn-inner--icon"><i class="fas fa-plus"></i></span>
 </button>
 @endsection

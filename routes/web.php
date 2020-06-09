@@ -29,4 +29,11 @@ Route::group(['prefix' => '_sysadmin', 'middleware' => ['auth', 'verified']], fu
         Route::patch('{fasilitas}', 'Admin\FasilitasController@update')->name('admin.fasilitas.edit');
         Route::delete('{fasilitas}', 'Admin\FasilitasController@destroy')->name('admin.fasilitas.hapus');
     });
+
+    Route::group(['prefix' => 'kamar'], function () {
+        Route::get('', 'Admin\KamarController@index')->name('admin.kamar');
+        Route::post('', 'Admin\KamarController@store')->name('admin.kamar.simpan');
+        Route::patch('{kamar}', 'Admin\KamarController@update')->name('admin.kamar.edit');
+        Route::delete('{kamar}', 'Admin\KamarController@destroy')->name('admin.kamar.hapus');
+    });
 });

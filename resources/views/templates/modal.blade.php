@@ -14,7 +14,7 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
           @isset($modal_submit)
-          <button type="submit" class="btn btn-{{ $modal_color ?? 'success' }}">{{ $modal_submit }}</button>
+          <button type="submit" class="btn btn-{{ $modal_color ?? 'primary' }}">{{ $modal_submit }}</button>
           @endisset
         </div>
       </form>

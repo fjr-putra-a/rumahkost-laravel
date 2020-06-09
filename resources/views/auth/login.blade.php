@@ -46,7 +46,7 @@
                             </div>
                         </div>
 
-                        <div class="mt-4"><button type="submit" class="btn btn-block btn-success">Masuk</button></div>
+                        <div class="mt-4"><button type="submit" class="btn btn-block btn-primary">Masuk</button></div>
                     </form>
                 </div>
             </div>
