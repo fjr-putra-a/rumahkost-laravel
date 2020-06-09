@@ -36,4 +36,11 @@ Route::group(['prefix' => '_sysadmin', 'middleware' => ['auth', 'verified']], fu
         Route::patch('{kamar}', 'Admin\KamarController@update')->name('admin.kamar.edit');
         Route::delete('{kamar}', 'Admin\KamarController@destroy')->name('admin.kamar.hapus');
     });
+
+    Route::group(['prefix' => 'token'], function () {
+        Route::get('', 'Admin\TokenController@index')->name('admin.token');
+        Route::post('', 'Admin\TokenController@store')->name('admin.token.simpan');
+        Route::patch('{token}', 'Admin\TokenController@update')->name('admin.token.edit');
+        Route::delete('{token}', 'Admin\TokenController@destroy')->name('admin.token.hapus');
+    });
 });

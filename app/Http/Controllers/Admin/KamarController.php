@@ -40,7 +40,7 @@ class KamarController extends Controller
             'status_kamar' => 'Kosong'
         ]);
 
-        return redirect()->back()->with('alert', 'Data Kamar berhasil ditambahkan!');
+        return redirect()->back()->with('alert', 'Data kamar berhasil ditambahkan!');
     }
     public function update(Request $request, Kamar $kamar)
     {

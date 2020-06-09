@@ -1,9 +1,9 @@
 @extends('layouts.dashboard-data')
 
-@section('title', 'Kost | Kamar')
-@section('icon', 'home')
-@section('heading', 'Kamar')
-@section('deskripsi', 'Kelola data kamar untuk digunakan pada inputan yang lain.')
+@section('title', 'Kost | Token')
+@section('icon', 'zap')
+@section('heading', 'Token')
+@section('deskripsi', 'Kelola data token untuk digunakan pada inputan yang lain.')
 
 @section('button')
 <button type="button" data-toggle="modal" data-target="#input"
@@ -29,35 +29,25 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Kode Kamar</th>
-          <th scope="col">Fasilitas</th>
-          <th scope="col">Status</th>
-          <th scope="col">Tarif</th>
+          <th scope="col">Token</th>
+          <th scope="col">Harga</th>
           <th scope="col"></th>
         </tr>
       </thead>
       <tbody>
-        @foreach ($kamar as $kamar)
+        @foreach ($token as $token)
         <tr>
           <td scope="row">{{ $loop->iteration }}</td>
-          <td>{{ ucwords($kamar->kode_kamar) }}</td>
-          <td>{{ ucwords($kamar->nama_fasilitas) }}</td>
-          <td>
-            @if ($kamar->status_kamar == 'Kosong')
-            <span class="badge badge-success">{{$kamar->status_kamar}}</span>
-            @elseif ($kamar->status_kamar == 'Terisi')
-            <span class="badge badge-danger">{{$kamar->status_kamar}}</span>
-            @endif
-          </td>
-          <td>Rp. <span class="">{{ucfirst($kamar->tarif)}}</span>,-</td>
+          <td>{{ ucwords($token->token_listrik) }}</td>
+          <td>Rp. <span class="">{{$token->jumlah_biaya}}</span>,-</td>
           <td class="text-right">
             <div class="actions ml-3">
-              <span data-toggle="modal" data-target="#edit-{{ $kamar->id }}">
+              <span data-toggle="modal" data-target="#edit-{{ $token->id }}">
                 <button href="#" class="action-item mr-2" data-toggle="tooltip" title="" data-original-title="Edit">
                   <i data-feather="edit"></i>
                 </button>
               </span>
-              <span data-toggle="modal" data-target="#hapus-{{ $kamar->id }}">
+              <span data-toggle="modal" data-target="#hapus-{{ $token->id }}">
                 <button href="#" class="action-item text-danger mr-2" data-toggle="tooltip" title=""
                   data-original-title="Hapus">
                   <i data-feather="trash"></i>
@@ -68,49 +58,39 @@
         </tr>
 
         @component('templates.modal')
-        @slot('id_modal') edit-{{ $kamar->id }} @endslot
+        @slot('id_modal') edit-{{ $token->id }} @endslot
         @slot('modal_title', 'Edit Data')
         @slot('modal_submit', 'Edit')
 
         @slot('form_action')
-        {{ route('admin.kamar.edit', $kamar->id) }}
+        {{ route('admin.token.edit', $token->id) }}
         @endslot
 
         @csrf @method('patch')
         <div class="form-group">
-          <label for="fasilitas">Pilih Fasilitas</label>
-          <select name="id_fasilitas" id="fasilitas" class="form-control @error('id_fasilitas') is-invalid @enderror">
-            <option selected disabled>Pilih Fasilitas</option>
-            @foreach ($fasilitas as $f)
-            <option {{ $kamar->id_fasilitas == $f->id ? 'selected' : '' }} value="{{$f->id}}">
-              {{$f->nama_fasilitas}}</option>
-            @endforeach
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Tarif</label>
+          <label>Harga</label>
           <div class="input-group input-group-merge">
-            <input type="text" name="tarif"
-              class="form-control form-control-prepend @error('tarif') is-invalid @enderror" value="{{ $kamar->tarif }}"
-              required placeholder="" aria-label="" aria-describedby="basic-addon1">
+            <input type="text" name="jumlah_biaya"
+              class="form-control form-control-prepend @error('jumlah_biaya') is-invalid @enderror"
+              value="{{ $token->jumlah_biaya }}" required placeholder="" aria-label="" aria-describedby="basic-addon1">
             <div class="input-group-prepend">
               <span class="input-group-text text-muted" id="basic-addon1">Rp.</span>
             </div>
             <div class="invalid-feedback">
-              Tarif harus diisi
+              Harga harus diisi
             </div>
           </div>
         </div>
         @endcomponent
 
         @component('templates.modal')
-        @slot('id_modal') hapus-{{ $kamar->id }} @endslot
+        @slot('id_modal') hapus-{{ $token->id }} @endslot
         @slot('modal_title', 'Hapus Data')
         @slot('modal_submit', 'Hapus')
         @slot('modal_color', 'danger')
 
         @slot('form_action')
-        {{ route('admin.kamar.hapus', $kamar->id) }}
+        {{ route('admin.token.hapus', $token->id) }}
         @endslot
 
         @csrf @method('delete')
@@ -129,33 +109,28 @@
 @slot('modal_submit', 'Simpan')
 
 @slot('form_action')
-{{ route('admin.kamar.simpan') }}
+{{ route('admin.token.simpan') }}
 @endslot
 
 @csrf
 <div class="form-group">
-  <label for="fasilitas">Fasilitas</label>
-  <select name="id_fasilitas" id="fasilitas" class="custom-select @error('id_fasilitas') is-invalid @enderror">
-    <option selected disabled>Pilih Fasilitas</option>
-    @foreach ($fasilitas as $fasilita)
-    <option {{ old('fasilitas') == $fasilita->id ? 'selected' : '' }} value="{{$fasilita->id}}">
-      {{$fasilita->nama_fasilitas}}</option>
-    @endforeach
-  </select>
+  <label>Token</label>
+  <input type="text" name="token_listrik" class="form-control @error('token_listrik') is-invalid @enderror" required>
   <div class="invalid-feedback">
-    Fasilitas harus diisi
+    Token harus diisi
   </div>
 </div>
 <div class="form-group">
-  <label for="fasilitas">Tarif</label>
+  <label>Harga</label>
   <div class="input-group input-group-merge">
-    <input type="text" name="tarif" class="form-control form-control-prepend @error('tarif') is-invalid @enderror"
-      required placeholder="" aria-label="" aria-describedby="basic-addon1">
+    <input type="text" name="jumlah_biaya"
+      class="form-control form-control-prepend @error('jumlah_biaya') is-invalid @enderror" required placeholder=""
+      aria-label="" aria-describedby="basic-addon1">
     <div class="input-group-prepend">
       <span class="input-group-text text-muted" id="basic-addon1">Rp.</span>
     </div>
     <div class="invalid-feedback">
-      Tarif harus diisi
+      Harga harus diisi
     </div>
   </div>
 </div>

@@ -70,7 +70,7 @@
           <input type="text" name="nama_fasilitas" class="form-control @error('nama_fasilitas') is-invalid @enderror"
             value="{{ $fasilitas->nama_fasilitas }}" required>
           <div class="invalid-feedback">
-            nama fasilitas harus diisi
+            Nama fasilitas harus diisi
           </div>
         </div>
         @endcomponent
@@ -109,7 +109,7 @@
   <label>Nama Fasilitas</label>
   <input type="text" name="nama_fasilitas" class="form-control @error('nama_fasilitas') is-invalid @enderror" required>
   <div class="invalid-feedback">
-    Nama kategori lowongan harus diisi
+    Nama Fasilitas harus diisi
   </div>
 </div>
 @endcomponent

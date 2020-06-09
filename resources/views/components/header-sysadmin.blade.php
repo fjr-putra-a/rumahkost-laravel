@@ -8,7 +8,7 @@
     <div class="dropdown-menu dropdown-menu-sm">
       <a href="{{ route('admin.fasilitas') }}" class="dropdown-item">Fasilitas</a>
       <a href="{{ route('admin.kamar') }}" class="dropdown-item">Kamar</a>
-      <a href="" class="dropdown-item">Token</a>
+      <a href="{{ route('admin.token') }}" class="dropdown-item">Token</a>
     </div>
   </li>
   <li class="nav-item nav-item-spaced d-lg-block ml-1">
