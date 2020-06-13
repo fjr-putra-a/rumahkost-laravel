@@ -56,10 +56,6 @@
             <div class="dropdown-menu dropdown-menu-sm dropdown-menu-left dropdown-menu-arrow p-3">
               <h6 class="dropdown-header px-0 mb-2 text-primary">Hi, {{ Auth::user()->name }}</h6>
               <div class=dropdown-divider></div>
-              <a href="#" class=dropdown-item>
-                <i data-feather=settings></i>
-                <span>Pengaturan</span>
-              </a>
               <a href={{ route('logout') }} class=dropdown-item
                 onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                 <i data-feather=log-out></i>

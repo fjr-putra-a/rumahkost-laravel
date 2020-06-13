@@ -10,7 +10,7 @@
                 <div>
                     <div class="mb-3 text-center">
                         <h6 class="h1 mb-1">Admin</h6>
-                        <p class="text-muted mb-0">Masukkan email dan password untuk melanjutkan.</p>
+                        <p class="text-muted mb-0">Masukkan email dan password <br> untuk melanjutkan.</p>
                     </div>
                     <span class="clearfix"></span>
                     <form method="POST" action="{{ route('login') }}">

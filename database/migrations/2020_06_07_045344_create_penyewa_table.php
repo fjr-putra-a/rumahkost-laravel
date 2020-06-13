@@ -15,14 +15,16 @@ class CreatePenyewaTable extends Migration
     {
         Schema::create('penyewa', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nomor_ktp');
             $table->string('nama');
+            $table->string('email')->unique();
+            $table->string('nomor_ktp');
             $table->enum('jk', ['Laki-laki', 'Perempuan']);
             $table->string('pekerjaan');
             $table->char('no_hp', 15);
-            $table->string('kode_kamar');
+            $table->string('id_kamar');
             $table->date('tanggal_masuk');
             $table->date('tanggal_keluar');
+            $table->string('foto')->default('a-penyewa.png');
             $table->timestamps();
         });
     }

@@ -43,4 +43,16 @@ Route::group(['prefix' => '_sysadmin', 'middleware' => ['auth', 'verified']], fu
         Route::patch('{token}', 'Admin\TokenController@update')->name('admin.token.edit');
         Route::delete('{token}', 'Admin\TokenController@destroy')->name('admin.token.hapus');
     });
+
+    Route::group(['prefix' => 'penyewa'], function () {
+        Route::get('', 'Admin\PenyewaController@index')->name('admin.penyewa');
+        Route::get('profil/{id}', 'Admin\PenyewaController@profil')->name('admin.penyewa.profil');
+        Route::post('', 'Admin\PenyewaController@store')->name('admin.penyewa.simpan');
+        Route::patch('{penyewa}', 'Admin\PenyewaController@update')->name('admin.penyewa.edit');
+        Route::delete('{penyewa}', 'Admin\PenyewaController@destroy')->name('admin.penyewa.hapus');
+    });
+
+    Route::group(['prefix' => 'laporan'], function () {
+        Route::get('penyewa', 'LaporanController@penyewa')->name('admin.laporan.penyewa');
+    });
 });

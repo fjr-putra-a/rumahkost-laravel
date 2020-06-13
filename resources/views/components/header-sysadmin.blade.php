@@ -11,20 +11,17 @@
       <a href="{{ route('admin.token') }}" class="dropdown-item">Token</a>
     </div>
   </li>
-  <li class="nav-item nav-item-spaced d-lg-block ml-1">
-    <a class="nav-link {{ Request::is('') ? 'active' : '' }}" href=>Penyewa</a>
-  </li>
   <li class="nav-item nav-item-spaced dropdown dropdown-animate ml-1" data-toggle=hover>
-    <a class="nav-link {{ Request::is('') || Request::is('') ? 'active' : '' }}" href=# role=button data-toggle=dropdown
-      aria-haspopup=true aria-expanded=false>Transaksi</a>
+    <a class="nav-link {{ Request::is('*penyewa') || Request::is('*laporan') ? 'active' : '' }}" href=# role=button
+      data-toggle=dropdown aria-haspopup=true aria-expanded=false>Data</a>
     <div class="dropdown-menu dropdown-menu-sm">
-      <a href="" class="dropdown-item">Kamar</a>
-      <a href="" class="dropdown-item">Listrik</a>
+      <a href="{{ route('admin.penyewa') }}" class="dropdown-item">Penyewa</a>
+      <a target="_blank" href="{{ route('admin.laporan.penyewa') }}" class="dropdown-item">Laporan</a>
     </div>
   </li>
   <li class="nav-item nav-item-spaced dropdown dropdown-animate ml-1" data-toggle=hover>
     <a class="nav-link {{ Request::is('') || Request::is('') ? 'active' : '' }}" href=# role=button data-toggle=dropdown
-      aria-haspopup=true aria-expanded=false>Arsip</a>
+      aria-haspopup=true aria-expanded=false>Transaksi</a>
     <div class="dropdown-menu dropdown-menu-sm">
       <a href="" class="dropdown-item">Kamar</a>
       <a href="" class="dropdown-item">Listrik</a>

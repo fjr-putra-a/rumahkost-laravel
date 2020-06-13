@@ -3,7 +3,7 @@
 @section('title', 'Kost | Beranda')
 
 @section('content')
-<section class="slice py-0 px-3 bg-section-secondary">
+{{-- <section class="slice py-0 px-3 bg-section-secondary">
   <div class="container-fluid">
     <div class="row align-items-center mb-2"></div>
     <div class="row mx-n2">
@@ -58,5 +58,5 @@
 
     </div>
   </div>
-</section>
+</section> --}}
 @endsection

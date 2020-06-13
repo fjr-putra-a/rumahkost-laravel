@@ -49,7 +49,7 @@
             <span class="badge badge-danger">{{$kamar->status_kamar}}</span>
             @endif
           </td>
-          <td>Rp. <span class="">{{ucfirst($kamar->tarif)}}</span>,-</td>
+          <td>Rp. <span class="">{{ucfirst($kamar->tarif)}}</span>,- <span class="p text-muted">/Bulan</span></td>
           <td class="text-right">
             <div class="actions ml-3">
               <span data-toggle="modal" data-target="#edit-{{ $kamar->id }}">
